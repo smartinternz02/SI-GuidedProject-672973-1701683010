@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+   <style>
+    * {
+      margin:0px;
+      padding:0px;
+      box-sizing:border-box;
+  }
+  
+  
+  .bg-container {
+      width:100%;
+      min-height:100vh;
+      background-image:url("C:/Users/deeks/OneDrive/Desktop/major project/share-price.png");
+      background-size:cover;
+      background-attachment:fixed;
+      padding:10px 8%;
+  
+  }
+  
+  
+  nav {
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 0px;
+      background-image: linear-gradient(to left,rgb(4, 4, 33),rgb(9, 14, 90));
+      
+     
+  }
+  .main-heading {
+      font-size:25px;
+      font-family:'Roboto';
+        font-weight:bold;
+        color:#ffffff;
+        text-align:left;
+      
+  }
+  ul {
+      list-style:none;
+      width:100%;
+      text-align:right;
+      padding-right:60px;
+  }
+  nav ul li {
+      display:inline-block;
+      margin:10px 20px;
+  }
+  
+  nav ul li a {
+      color:white;
+      text-decoration:none;
+      font-family:"Roboto";
+      font-weight:500;
+      font-size:20px;
+  
+  }
+  .button1 {
+      height:40px;
+      width:90px;
+      font-family:'Roboto';
+      color:white; 
+      border-width:0;
+      border-radius:8px;
+      padding-left:14px;
+      padding-right:8px;
+      background-color:rgb(0, 0, 255);
+      font-size:18px;
+      font-weight:500;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      
+  }
+  
+  .content {
+      margin-top:14%;
+      color:black;
+      max-width:620px;
+      display:flex;
+      flex-direction: column;
+      
+  }
+  
+  .title {
+      font-family:'Roboto';
+      color:#ffffff;
+      font-size:40px;
+      font-weight:bold;
+  }
+  .para {
+      font-family:'Roboto';
+      color:rgb(230, 228, 231);
+      font-size:20px;
+      font-weight:500;
+      
+  }
+  
+  .btn-class {
+      margin-top:20px;
+  }
+  .icon-container {
+      display:flex;
+      flex-direction: row;
+      align-items:center;
+      justify-content:space-between;
+      
+  }
+  .font-container {
+      height:500px;
+      width:500px;
+  }
+  .color {
+      color:brown;
+      margin-left:50px;
+     
+  }
+  .link {
+      text-decoration:none;
+      color:white; 
+      font-size:20px;
+      font-family:'Roboto';
+      font-weight:500;
+  }
+  .button {
+      height:40px;
+      width:90px;
+      font-family:'Roboto';
+      color:white; 
+      font-size:18px;
+      font-weight:500;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      background-color:transparent;
+      border-width:0;
+      
+  
+  }
+  .diff{
+      color:rgb(10, 32, 162);
+  }
+  .rest-container {
+      display:flex;
+      flex-direction:column;
+  }
+  
+  .about-container{
+      display:flex;
+      flex-direction:column;
+      padding:40px;
+      background-image:#ffffff;
+  }
+  .about {
+      font-family:'Roboto';
+      color:rgb(19, 50, 206); 
+      font-size:40px;
+      font-weight:bold;
+      
+  }
+  .caution{
+      font-family:'Roboto';
+      color:black; 
+      font-size:20px;
+      font-weight:500;
+      padding:5px;
+  }
+  .list-container {
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      align-items:flex-start;
+      padding-left:40px;
+      padding-bottom:20px;
+  }
+  .list-cont {
+      list-style-type:disc;
+      font-family:'Roboto';
+      font-size:18px;
+      font-weight:500;
+  }
+  
+  .service-heading {
+      font-family:'Roboto';
+      color:black; 
+      font-size:35px;
+      font-weight:bold;
+  }
+  .services-container {
+      display:flex;
+      flex-direction:column;
+      padding:20px;
+  }
+  .service {
+      padding:20px;
+  }
+  .side-heading{
+      font-family:'Roboto';
+      color:black; 
+      font-size:25px;
+      font-weight:bold;
+  }
+  .service-para {
+      font-family:'Roboto';
+      color:black; 
+      font-size:20px;
+      font-weight:500;
+  }
+  .useful-container {
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+  }
+  
+  .useful-links {
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      align-items:flex-start;
+      padding-top:20px;
+  
+  }
+  .useful-title {
+      font-family:'Roboto';
+      color:rgb(0, 0, 255); 
+      font-size:25px;
+      font-weight:bold;
+  }
+  .list-useful-container{
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      align-items:flex-start;
+  
+  }
+  .button-sub{
+      height:40px;
+      width:100px;
+      font-family:'Roboto';
+      color:white; 
+      border-width:0;
+      border-radius:12px;
+      padding-left:14px;
+      padding-right:8px;
+      background-color:rgb(52, 8, 97);
+      font-size:18px;
+      font-weight:500;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      margin-left:20px;
+      margin-top:20px;
+  }
+  
+  .news-container {
+      display:flex;
+      flex-direction:column;
+      padding:20px;
+      
+  }
+  .news-heading {
+      font-family:'Roboto';
+      color:rgb(29, 35, 161); 
+      font-size:25px;
+      font-weight:bold;
+      padding-top:20px;
+  }
+  .list-useful {
+      padding:5px;
+      font-size:20px;
+  }
+  .sub-para {
+      font-family:'Roboto';
+      color:black; 
+      font-size:15px;
+      font-weight:500;
+      padding:8px;
+  }
+  .Subscribe-container {
+      display:flex;
+      flex-direction:row;
+      
+  }
+  .input-email {
+      cursor:pointer;
+      outline:none;
+      margin-top:25px;
+      height:30px;
+      width:150px;
+  }
+  
+  
+  
+  footer {
+      background-color:#102fc7;
+      padding: 40px 0;
+  }
+  
+  .container2 {
+  max-width: 1170px;
+  margin: 0 auto;
+  }
+  
+  .row {
+  display: flex;
+  flex-wrap: wrap;
+  }
+  
+  .col-md-4 {
+  flex: 1 0 33.33%;
+  text-align: center;
+  }
+  
+  .contact-info, .social-media, .newsletter {
+  margin-bottom: 30px;
+  }
+  
+  .footer-heading {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color:white;
+  font-family:'Roboto';
+  }
+  
+  address {
+  font-style: normal;
+  font-family:'Roboto';
+  font-size:15px;
+  color:#ffffff;
+  
+  }
+  
+  address p {
+  margin-bottom: 5px;
+  }
+  
+  .social-icons {
+  list-style: none;
+  padding-right:220px;
+  }
+  
+  .social-icons li {
+  display: inline-block;
+  margin: 0 5px;
+  }
+  
+  .social-icons i {
+  font-size: 24px;
+  color: #ccc;
+  transition: color 0.2s ease-in-out;
+  }
+  
+  .social-icons i:hover {
+  color: #007bff;
+  }
+  
+  .copyright {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  
+  .copy-caution {
+    font-size:15px;
+    font-family:'Roboto';
+    font-size:20px;
+    color:#ffffff;
+  }
+  
+  
+  
+  .url-link {
+    text-decoration:none;
+    color:rgba(240, 248, 255, 0.916);
+  
+  }
+  .image-container {
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      align-items:center;
+      margin:40px;
+  }
+  .share-img {
+      height:300px;
+      width:350px;
+      margin:20px;
+      
+  }
+  .about-para {
+      font-size:15px;
+      font-family:'Roboto';
+      font-size:20px;
+      color:#000000;
+      padding-top:20px;
+      padding-bottom:20px;
+  }
+  
+  
+  
+  
+  
+  
+  .benefits {
+     
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      align-items:flex-start;
+      padding-bottom:20px;
+      color:#000000;
+      font-weight:500;
+      font-family:'Roboto';
+      font-size:18px;
+  }
+  .companies {
+      margin-top: 20px;
+  }
+  
+  .disclaimer {
+      font-size: smaller;
+      color: #999;
+      margin-top: 20px;
+  }
+  
+  .service-title{
+      font-family:'Roboto';
+      color:rgb(19, 50, 206); 
+      font-size:40px;
+      font-weight:bold;
+      padding-bottom:20px;
+  }
+  .benefit-heading {
+      font-family:'Roboto';
+      color:rgb(19, 69, 206); 
+      font-size:20px;
+      font-weight:bold;
+      padding-bottom:20px;
+  }
+</style>
+    </head>
+    <body>
+
+        <div class="rest-container"> 
+            <nav>
+                <h1 class="main-heading">Share Price Estimation</h1>
+             <ul>
+                <li> <a href="/home">Home</a></li>
+                <li> <a href="#weSection1"> About </a></li>
+                <li> <a href="#weSection2"> Contact </a></li>
+             </ul>
+             <button class="button"> <a class="link" href="details.html"> Predict </a></button>
+            </nav>
+        
+        
+        <div class="bg-container">
+            
+          
+        
+        </div>
+            
+            
+        </div>
+        <div id="weSection1">
+            <div  class="about-container">
+                <h2 class="about">About Us</h2>
+                <div >
+                 <p class="about-para">The objective of this project is to estimate the share prices of the top 5 GPU companies in the market using historical data and current market trends. The aim is to develop a predictive model that can forecast the future prices of these companies based on their historical performance and other relevant factors. The model should take into consideration various economic indicators, industry trends, company financials, and other relevant data to make accurate predictions. The analysis should be performed using statistical and machine learning/ Deep learning techniques and the results should be presented in a dear and concise manner. The final output of the project will be a report outlining the predicted share prices of the top 5 GPU companies,along with an analysis of the factors that have contributed to their performance.</p>
+                </div>
+       
+        <div class="image-container">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.moqSyfxkU0SQkTMbUqwizwHaEK&pid=Api&P=0&h=180" class="share-img"/>
+        <img src="https://history-computer.com/wp-content/uploads/2022/09/AMD-2048x1365.jpg" class="share-img"/>
+        <img src="https://cdn.wccftech.com/wp-content/uploads/2018/06/NVIDIA-V100-GPU-with-specs.jpg" class="share-img"/>
+        </div>
+             
+        <h1 class="service-title">GPU Share Price Estimation Services</h1>
+    
+        <h3 class="benefit-heading">Benefits of using our service:</h3>
+        <ul class="benefits">
+            <li>1) Gain a competitive edge by making data-driven investment decisions.</li>
+            <li>2) Reduce investment risk by understanding potential price movements.</li>
+            <li>3) Stay informed on the latest developments in the GPU market.</li>
+        </ul>
+    
+        <h3 class="benefit-heading">Top 5 GPU Companies we cover:</h3>
+        <ul class="benefits">
+            <li>1. NVIDIA (NVDA)</li>
+            <li>2. AMD (AMD)</li>
+            <li>3. Intel (INTC)</li>
+            <li>4. Motarola solutions </li>
+            <li>5. ASUS</li>
+        </ul>
+    
+
+    
+        <p>Contact us today to learn more about our services!</p>
+          
+          
+          
+       
+        <div class="useful-container">
+            <div class="useful-links">
+                <h3 class="useful-title">Useful Links</h3>
+                <ul class="list-useful-container">
+                  <li class="list-useful"><a href="#">Home</a></li>
+                  <li class="list-useful"><a href="#">About Us</a></li>
+                  <li class="list-useful"><a href="#">Terms of Service</a></li>
+                  <li class="list-useful"><a href="#">Privacy Policy</a></li>
+                  <li class="list-useful"><a href="#">Contact Us</a></li>
+                </ul>   
+        
+            </div>
+            <div class="news-container">
+                <h3 class="news-heading">Our NewsLetter</h3>
+            <p class="sub-para">Subscribe to our newsletter to receive the latest industry updates, product announcements, and exclusive offers.</p>
+            <form action="#">
+                <div class="Subscribe-container">
+                    <input type="email" placeholder="Your Email Address" class="input-email">
+                    <button type="submit" class="button-sub">Subscribe</button>
+                </div>
+             
+            </form>
+            </div>
+    
+        </div>
+        
+    
+    
+    
+    
+        
+       
+        
+    
+            </div>
+        
+        </div>
+          </div>
+       <div id="weSection2">
+        <footer>
+            <div class="container2">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="contact-info">
+                    <h2 class="footer-heading">Contact Us</h2>
+                    <address>
+                      <p><i class="fa fa-map-marker"></i> Gachibowli,Hyderabad,Telangana 500001</p>
+                      <p><i class="fa fa-phone"></i> <a  class="url-link" href="tel:+15555555555">Phone: +1 (555) 555-5555</a></p>
+                      <p><i class="fa fa-envelope"></i> <a  class="url-link" href="mailto:contact@yourwebsite.com">Email: contact@sharepriceestimation.com</a></p>
+                    </address>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="social-media">
+                    <h2 class="footer-heading">Connect with Us</h2>
+                    <ul class="social-icons">
+                      <li><a href="https://www.facebook.com/your-page"><i class="fa fa-facebook-square"></i></a></li>
+                      <li><a href="https://twitter.com/your-account"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="https://www.instagram.com/your-profile"><i class="fa fa-instagram"></i></a></li>
+                      <li><a href="https://www.youtube.com/channel/your-channel"><i class="fa fa-youtube"></i></a></li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="copyright">
+              <p class="copy-caution">&copy; 2024 Share Price Estimation Of TOP 5 GPU Companies. All Rights Reserved.</p>
+            </div>
+          </footer>
+          
+       </div>
+
+    </div>
+    </body>
+</html>

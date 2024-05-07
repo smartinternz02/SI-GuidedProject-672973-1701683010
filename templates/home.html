@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+    body {
+      background-image: url("static/img_1.jpg"); /* Assuming you have a background image named img_1.jpg */
+      background-size: cover;
+      color: rgb(11, 10, 10);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .content-wrapper { /* New container for all content */
+      display: flex; /* Enables flexbox layout */
+      flex-direction: column; /* Stacks elements vertically */
+      align-items: flex-start; /* Aligns content to the left */
+      width: 50%; /* Sets container width to 50% */
+      margin: 0 auto; /* Centers the container horizontally */
+      padding: 50px; /* Adds padding for spacing */
+    }
+
+    h1 {
+      padding-top: 0; /* Removes top padding */
+      font-size: 35px;
+      color: rgb(67, 123, 172); /* Change color to your preference */
+    }
+
+    h2 {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333; /* Change color to your preference */
+    }
+
+    a {
+      color: white;
+      text-decoration: none; /* Removes underline from links */
+      font-weight: bold;
+      margin-top: 20px;
+      display: block;
+    }
+
+    a:hover { /* Styles applied on hovering over links */
+      color: blue; /* Change hover color to your preference */
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="content-wrapper">  <h1>Welcome to the Home Page</h1>
+    <h2>Share price estimation of top 5 GPU companies</h2>
+    <a href="/predict" class="left-aligned"> Prediction</a>
+    <a href="/about"> About</a>
+    <a href="/contact" class="left-aligned"> Contact</a>
+  </div>
+</body>
+</html>
